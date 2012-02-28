@@ -56,7 +56,7 @@ public class DsMgmtTestBase  extends AbstractMgmtTestBase{
      */
     protected void setModel(String filename)throws Exception{
 	    String xml=readXmlResource(System.getProperty("jbossas.ts.integ.dir")+"/basic/src/test/resources/jca/metrics/data-sources/"+filename);
-        List<ModelNode> operations=XmlToModelOperations(xml,Namespace.CURRENT.getUriString(),new DataSourceSubsystemParser());
+        List<ModelNode> operations=xmlToModelOperations(xml,Namespace.CURRENT.getUriString(),new DataSourceSubsystemParser());
         executeOperation(operationListToCompositeOperation(operations));
     }
     /*
@@ -76,7 +76,7 @@ public class DsMgmtTestBase  extends AbstractMgmtTestBase{
     }
     protected static List<ModelNode> marshalAndReparseDsResources(String childType) throws Exception{
         DataSourceSubsystemParser parser = new DataSourceSubsystemParser();
-    	return XmlToModelOperations(ModelToXml("datasources",childType,parser),Namespace.CURRENT.getUriString(),parser);
+    	return xmlToModelOperations(ModelToXml("datasources",childType,parser),Namespace.CURRENT.getUriString(),parser);
     }
     private static void testCon(final String dsName,String type) throws Exception {
         final ModelNode address = new ModelNode();

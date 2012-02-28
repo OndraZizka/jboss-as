@@ -211,7 +211,7 @@ public class AbstractMgmtTestBase {
         return strWriter.toString();
     }
     
-    public static List<ModelNode> XmlToModelOperations(String xml,String nameSpaceUriString,XMLElementReader<List<ModelNode>> parser) throws Exception {
+    public static List<ModelNode> xmlToModelOperations(String xml,String nameSpaceUriString,XMLElementReader<List<ModelNode>> parser) throws Exception {
     	
     	XMLMapper mapper = XMLMapper.Factory.create();
         mapper.registerRootElement(new QName(nameSpaceUriString, "subsystem"), parser);

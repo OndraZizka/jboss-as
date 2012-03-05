@@ -46,6 +46,6 @@ public interface RemotingLogger extends BasicLogger {
     RemotingLogger ROOT_LOGGER = Logger.getMessageLogger(RemotingLogger.class, RemotingLogger.class.getPackage().getName());
 
     @LogMessage(level = INFO)
-    @Message(id = 17100, value = "Listening on %s")
-    void listeningOnSocket(InetSocketAddress address);
+    @Message(id = 17100, value = "Listening on %s:%d")
+    void listeningOnSocket( String hostname, int port );
 }

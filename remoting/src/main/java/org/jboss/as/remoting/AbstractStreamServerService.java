@@ -25,6 +25,7 @@ import java.net.BindException;
 import java.net.InetSocketAddress;
 
 import org.jboss.as.network.ManagedBinding;
+import org.jboss.as.network.NetworkUtils;
 import org.jboss.as.network.SocketBindingManager;
 import org.jboss.logging.Logger;
 import org.jboss.msc.service.Service;
@@ -104,7 +105,8 @@ public abstract class AbstractStreamServerService implements Service<AcceptingCh
             if (sbm != null) {
                 managedBinding = registerSocketBinding(sbm);
             }
-            ROOT_LOGGER.listeningOnSocket(getSocketAddress());
+            InetSocketAddress sa = getSocketAddress();
+            ROOT_LOGGER.listeningOnSocket( NetworkUtils.formatPossibleIpv6Address(sa.getHostName()), sa.getPort() );
 
         } catch (BindException e) {
             throw MESSAGES.couldNotBindToSocket(e.getMessage() + " " + getSocketAddress(), e);

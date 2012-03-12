@@ -1,0 +1,30 @@
+Maven replacement
+
+<profile>\s+<id>(.*)</id>\s+<activation><property><name>(.*)</name></property></activation>
+<profile id="$1" if="$2"> 
+
+<execution>\s*<id>(.+)</id>\s*<goals>\s*<goal>(.+)</goal>\s*</goals>\s*<phase>(.+)</phase>
+<phase name="$3">
+    <:$2 mvn:exID="$1"/>
+
+<inherited>(.+)</inherited>
+mvn:inherit="$1"
+
+<parameter>\s*<name>(.*)</name>\s*<value>(.*)</value>\s*</parameter>
+<parameter name="$1" value="$2"/>
+
+
+<dependency>\s*<groupId>(.+)</groupId>\s*<artifactId>(.+)</artifactId>\s*<version>(.+)</version>\s*</dependency>
+<dependency gav="$1:$2:$3"/>
+
+<dependency>\s*<groupId>(.+)</groupId>\s*<artifactId>(.+)</artifactId>\s*<scope>(.+)</scope>\s*</dependency>
+<dependency ga="$1:$2" scope="$3"/>
+
+<dependency>\s*<groupId>(.+)</groupId>\s*<artifactId>(.+)</artifactId>\s*</dependency>
+<dependency ga="$1:$2"/>
+
+<inherited>(.*)</inherited>
+inherited="$1"
+
+<artifactItem><groupId>(.+)</groupId><artifactId>(.+)</artifactId><version>(.+)</version></artifactItem>
+<artifactItem gav="$1:$2:$3"/>

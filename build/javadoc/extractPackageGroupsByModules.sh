@@ -10,7 +10,7 @@ DIRNAME=`dirname $0`
 TARGET=$DIRNAME/target
 PROJECT_ROOT_DIR="$DIRNAME/../..";
 
-AS_BUILT_DIR=`ls -1 -d $PROJECT_ROOT_DIR/build/target/jboss-as-* | tail -1`  # Latest built AS in target/
+AS_BUILT_DIR=`ls -1 -d $PROJECT_ROOT_DIR/build/target/jboss-as-* | grep '/' | tail -1`  # Latest built AS in target/
 
 if [ ! `which xsltproc` ]; then
   echo "xsltproc not found. This script needs it. Please install it.";

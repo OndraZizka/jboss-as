@@ -26,6 +26,8 @@ echo '' > $TARGET/packages.tmp.txt
 for i in `find $PROJECT_ROOT_DIR/build/src/main/resources/modules/ -name module.xml` ;  do
   FILE=`grep 'value="private"' --files-without-match  $i`;
   if [ "$FILE" == "" ] ; then continue; fi;
+  FILE=`grep 'value="unsupported"' --files-without-match  $i`;
+  if [ "$FILE" == "" ] ; then continue; fi;
   echo "  Public module: $i"
 
   ##  Extract module name.

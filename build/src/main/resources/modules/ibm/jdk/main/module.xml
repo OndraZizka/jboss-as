@@ -41,6 +41,7 @@
                 <path name="com/ibm/security/bootstrap"/>
                 <path name="com/ibm/security/auth/module"/>
                 <path name="com/ibm/security/util"/>
+                <path name="META-INF/services"/>
             </paths>
         </system>
     </dependencies>

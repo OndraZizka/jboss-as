@@ -1865,9 +1865,8 @@
 
                                     <includeDependencySources>true</includeDependencySources>
                                     <dependencySourceIncludes>
+                                        <!--     <include># </include> -->
                                         <include>commons-configuration:commons-configuration</include>
-                                        <include>com.sun.xml.bind:jaxb-impl</include>
-                                        <include>com.sun.xml.bind:jaxb-xjc</include>
                                         <include>javax.activation:activation</include>
                                         <include>javax.enterprise:cdi-api</include>
                                         <include>javax.faces:jsf-api</include>
@@ -1875,36 +1874,7 @@
                                         <include>javax.jws:jsr181-api</include>
                                         <include>javax.mail:mail</include>
                                         <include>javax.validation:validation-api</include>
-                                        <include>jboss.jaxbintros:jboss-jaxb-intros</include>
                                         <include>org.apache.cxf:cxf-api</include>
-                                        <include>org.apache.cxf:cxf-rt-bindings-coloc</include>
-                                        <include>org.apache.cxf:cxf-rt-bindings-object</include>
-                                        <include>org.apache.cxf:cxf-rt-bindings-soap</include>
-                                        <include>org.apache.cxf:cxf-rt-bindings-xml</include>
-                                        <include>org.apache.cxf:cxf-rt-core</include>
-                                        <include>org.apache.cxf:cxf-rt-databinding-aegis</include>
-                                        <include>org.apache.cxf:cxf-rt-databinding-jaxb</include>
-                                        <include>org.apache.cxf:cxf-rt-frontend-jaxws</include>
-                                        <include>org.apache.cxf:cxf-rt-frontend-simple</include>
-                                        <include>org.apache.cxf:cxf-rt-management</include>
-                                        <include>org.apache.cxf:cxf-rt-transports-http</include>
-                                        <include>org.apache.cxf:cxf-rt-transports-jms</include>
-                                        <include>org.apache.cxf:cxf-rt-transports-local</include>
-                                        <include>org.apache.cxf:cxf-rt-ws-addr</include>
-                                        <include>org.apache.cxf:cxf-rt-ws-mex</include>
-                                        <include>org.apache.cxf:cxf-rt-ws-policy</include>
-                                        <include>org.apache.cxf:cxf-rt-ws-rm</include>
-                                        <include>org.apache.cxf:cxf-rt-ws-security</include>
-                                        <include>org.apache.cxf:cxf-tools-common</include>
-                                        <include>org.apache.cxf:cxf-tools-java2ws</include>
-                                        <include>org.apache.cxf:cxf-tools-validator</include>
-                                        <include>org.apache.cxf:cxf-tools-wsdlto-core</include>
-                                        <include>org.apache.cxf:cxf-tools-wsdlto-databinding-jaxb</include>
-                                        <include>org.apache.cxf:cxf-tools-wsdlto-frontend-jaxws</include>
-                                        <include>org.apache.cxf.services.sts:cxf-services-sts-core</include>
-                                        <include>org.apache.cxf.xjcplugins:cxf-xjc-boolean</include>
-                                        <include>org.apache.cxf.xjcplugins:cxf-xjc-dv</include>
-                                        <include>org.apache.cxf.xjcplugins:cxf-xjc-ts</include>
                                         <include>org.apache.juddi:juddi-client</include>
                                         <include>org.apache.juddi.scout:scout</include>
                                         <include>org.apache.juddi:uddi-ws</include>
@@ -1919,19 +1889,15 @@
                                         <include>org.hornetq:hornetq-commons</include>
                                         <include>org.hornetq:hornetq-core</include>
                                         <include>org.hornetq:hornetq-jms</include>
-                                        <!-- Causes [ERROR] java.lang.ClassCastException: com.sun.tools.javadoc.ClassDocImpl cannot be cast to com.sun.javadoc.AnnotationTypeDoc
-                                        <include>org.jboss.as:jboss-as-controller-client</include>
-                                        -->
-                                        <!-- Causes [ERROR] java.lang.ClassCastException: com.sun.tools.javadoc.ClassDocImpl cannot be cast to com.sun.javadoc.AnnotationTypeDoc
-                                        <include>org.jboss:jboss-dmr</include>
-                                        -->
+                                        <include>org.hornetq:hornetq-journal</include>
+                                        <!--     <include># org.jboss.as:jboss-as-controller-client</include> -->
+                                        <include>org.jboss.as:jboss-as-domain-http-error-context</include>
+                                        <!--     <include># org.jboss:jboss-dmr</include> -->
                                         <include>org.jboss:jboss-ejb-client</include>
                                         <include>org.jboss:jboss-remote-naming</include>
                                         <include>org.jboss.jbossts:jbosstxbridge</include>
-                                        <!--
-                                        <include>org.jboss.jbossts:jbossxts</include>
-                                        <include>org.jboss.jbossts:jbossxts-api</include>
-                                        -->
+                                        <!--     <include># org.jboss.jbossts:jbossxts</include> -->
+                                        <!--     <include># org.jboss.jbossts:jbossxts-api</include> -->
                                         <include>org.jboss.logging:jboss-logging</include>
                                         <include>org.jboss.logging:jul-to-slf4j-stub</include>
                                         <include>org.jboss.logmanager:jboss-logmanager</include>
@@ -1971,16 +1937,12 @@
                                         <include>org.jboss.spec.javax.xml.soap:jboss-saaj-api_1.3_spec</include>
                                         <include>org.jboss.spec.javax.xml.ws:jboss-jaxws-api_2.2_spec</include>
                                         <include>org.jboss.weld:weld-api</include>
-                                        <include>org.jboss.ws.cxf:jbossws-cxf-client</include>
-                                        <include>org.jboss.ws.cxf:jbossws-cxf-transports-httpserver</include>
                                         <include>org.jboss.ws:jbossws-api</include>
                                         <include>org.jboss.ws.native:jbossws-native-core</include>
                                         <include>org.jboss.xnio:xnio-api</include>
                                         <include>org.osgi:org.osgi.core</include>
-                                        <include>org.picketbox:picketbox</include>
-                                        <!--
-                                        <include>org.picketbox:picketbox-commons</include>
-                                        -->
+                                        <!--     <include># org.picketbox:picketbox</include> -->
+                                        <!--     <include># org.picketbox:picketbox-commons</include> -->
                                         <include>org.picketbox:picketbox-infinispan</include>
                                         <include>org.picketlink.distribution:picketlink-jbas7</include>
                                         <include>org.picketlink:picketlink-core</include>
@@ -1988,17 +1950,238 @@
                                         <include>org.slf4j:slf4j-api</include>
                                         <include>org.slf4j:slf4j-ext</include>
                                         <include>wsdl4j:wsdl4j</include>
-                                        <!--
-                                            [ERROR] 1) org.jboss.as:jboss-as-build:pom:7.1.0.CR1-SNAPSHOT
-                                            [ERROR] 2) xalan:xalan:jar:sources:2.7.1.jbossorg-1
-                                            [ERROR] 3) xalan:serializer:jar:2.7.1-jbossorg-1
-                                        <include>xalan:serializer</include>
-                                        -->
+                                        <!--     <include># xalan:serializer</include> -->
                                         <include>xalan:xalan</include>
                                         <include>xerces:xercesImpl</include>
                                     </dependencySourceIncludes>
                                     <dependencySourceExcludes>
+                                        <exclude>antlr:antlr</exclude>
+                                        <exclude>asm:asm</exclude>
+                                        <exclude>ch.qos.cal10n:cal10n-api</exclude>
+                                        <exclude>com.github.relaxng:relaxngDatatype</exclude>
+                                        <exclude>com.google.guava:guava</exclude>
+                                        <exclude>com.h2database:h2</exclude>
+                                        <exclude>commons-beanutils:commons-beanutils</exclude>
+                                        <exclude>commons-cli:commons-cli</exclude>
+                                        <exclude>commons-codec:commons-codec</exclude>
+                                        <exclude>commons-collections:commons-collections</exclude>
+                                        <exclude>commons-io:commons-io</exclude>
+                                        <exclude>commons-lang:commons-lang</exclude>
+                                        <exclude>commons-pool:commons-pool</exclude>
+                                        <exclude>com.sun.codemodel:codemodel</exclude>
+                                        <exclude>com.sun.faces:jsf-impl</exclude>
+                                        <exclude>com.sun.istack:istack-commons-runtime</exclude>
+                                        <exclude>com.sun.istack:istack-commons-tools</exclude>
+                                        <exclude>com.sun.xml.bind:jaxb-impl</exclude>
+                                        <exclude>com.sun.xml.bind:jaxb-xjc</exclude>
+                                        <exclude>com.sun.xml.messaging.saaj:saaj-impl</exclude>
+                                        <exclude>com.sun.xml.txw2:txw2</exclude>
+                                        <exclude>com.sun.xsom:xsom</exclude>
+                                        <exclude>dom4j:dom4j</exclude>
+                                        <exclude>gnu-getopt:getopt</exclude>
+                                        <exclude>io.netty:netty</exclude>
+                                        <exclude>javax.faces:jsf-impl</exclude>
+                                        <exclude>jaxen:jaxen</exclude>
+                                        <exclude>jboss.jaxbintros:jboss-jaxb-intros</exclude>
+                                        <exclude>joda-time:joda-time</exclude>
+                                        <exclude>net.jcip:jcip-annotations</exclude>
+                                        <exclude>org.apache.cxf:cxf-rt-bindings-coloc</exclude>
+                                        <exclude>org.apache.cxf:cxf-rt-bindings-object</exclude>
+                                        <exclude>org.apache.cxf:cxf-rt-bindings-soap</exclude>
+                                        <exclude>org.apache.cxf:cxf-rt-bindings-xml</exclude>
+                                        <exclude>org.apache.cxf:cxf-rt-core</exclude>
+                                        <exclude>org.apache.cxf:cxf-rt-databinding-aegis</exclude>
+                                        <exclude>org.apache.cxf:cxf-rt-databinding-jaxb</exclude>
+                                        <exclude>org.apache.cxf:cxf-rt-frontend-jaxws</exclude>
+                                        <exclude>org.apache.cxf:cxf-rt-frontend-simple</exclude>
+                                        <exclude>org.apache.cxf:cxf-rt-management</exclude>
+                                        <exclude>org.apache.cxf:cxf-rt-transports-http</exclude>
+                                        <exclude>org.apache.cxf:cxf-rt-transports-jms</exclude>
+                                        <exclude>org.apache.cxf:cxf-rt-transports-local</exclude>
+                                        <exclude>org.apache.cxf:cxf-rt-ws-addr</exclude>
+                                        <exclude>org.apache.cxf:cxf-rt-ws-mex</exclude>
+                                        <exclude>org.apache.cxf:cxf-rt-ws-policy</exclude>
+                                        <exclude>org.apache.cxf:cxf-rt-ws-rm</exclude>
+                                        <exclude>org.apache.cxf:cxf-rt-ws-security</exclude>
+                                        <exclude>org.apache.cxf:cxf-tools-common</exclude>
+                                        <exclude>org.apache.cxf:cxf-tools-java2ws</exclude>
+                                        <exclude>org.apache.cxf:cxf-tools-validator</exclude>
+                                        <exclude>org.apache.cxf:cxf-tools-wsdlto-core</exclude>
+                                        <exclude>org.apache.cxf:cxf-tools-wsdlto-databinding-jaxb</exclude>
+                                        <exclude>org.apache.cxf:cxf-tools-wsdlto-frontend-jaxws</exclude>
+                                        <exclude>org.apache.cxf.services.sts:cxf-services-sts-core</exclude>
+                                        <exclude>org.apache.cxf.xjcplugins:cxf-xjc-boolean</exclude>
+                                        <exclude>org.apache.cxf.xjcplugins:cxf-xjc-dv</exclude>
+                                        <exclude>org.apache.cxf.xjcplugins:cxf-xjc-ts</exclude>
+                                        <exclude>org.apache.httpcomponents:httpclient</exclude>
+                                        <exclude>org.apache.httpcomponents:httpcore</exclude>
+                                        <exclude>org.apache.httpcomponents:httpmime</exclude>
+                                        <exclude>org.apache.james:apache-mime4j</exclude>
+                                        <exclude>org.apache.neethi:neethi</exclude>
+                                        <exclude>org.apache.santuario:xmlsec</exclude>
+                                        <exclude>org.apache.velocity:velocity</exclude>
+                                        <exclude>org.apache.ws.xmlschema:xmlschema-core</exclude>
+                                        <exclude>org.codehaus.jackson:jackson-core-asl</exclude>
+                                        <exclude>org.codehaus.jackson:jackson-jaxrs</exclude>
+                                        <exclude>org.codehaus.jackson:jackson-mapper-asl</exclude>
+                                        <exclude>org.codehaus.jackson:jackson-xc</exclude>
+                                        <exclude>org.codehaus.jettison:jettison</exclude>
+                                        <exclude>org.codehaus.woodstox:stax2-api</exclude>
+                                        <exclude>org.codehaus.woodstox:woodstox-core-asl</exclude>
+                                        <exclude>org.hornetq:hornetq-ra</exclude>
+                                        <exclude>org.infinispan:infinispan-cachestore-jdbc</exclude>
+                                        <exclude>org.infinispan:infinispan-cachestore-remote</exclude>
+                                        <exclude>org.infinispan:infinispan-client-hotrod</exclude>
+                                        <exclude>org.infinispan:infinispan-core</exclude>
+                                        <exclude>org.jacorb:jacorb</exclude>
+                                        <exclude>org.javassist:javassist</exclude>
+                                        <exclude>org.jboss.as:jboss-as-appclient</exclude>
+                                        <exclude>org.jboss.as:jboss-as-cli</exclude>
+                                        <exclude>org.jboss.as:jboss-as-clustering-api</exclude>
+                                        <exclude>org.jboss.as:jboss-as-clustering-common</exclude>
+                                        <exclude>org.jboss.as:jboss-as-clustering-ejb3-infinispan</exclude>
+                                        <exclude>org.jboss.as:jboss-as-clustering-impl</exclude>
+                                        <exclude>org.jboss.as:jboss-as-clustering-infinispan</exclude>
+                                        <exclude>org.jboss.as:jboss-as-clustering-jgroups</exclude>
+                                        <exclude>org.jboss.as:jboss-as-clustering-registry</exclude>
+                                        <exclude>org.jboss.as:jboss-as-clustering-service</exclude>
+                                        <exclude>org.jboss.as:jboss-as-clustering-singleton</exclude>
+                                        <exclude>org.jboss.as:jboss-as-clustering-web-infinispan</exclude>
+                                        <exclude>org.jboss.as:jboss-as-clustering-web-spi</exclude>
+                                        <exclude>org.jboss.as:jboss-as-cmp</exclude>
+                                        <exclude>org.jboss.as:jboss-as-configadmin</exclude>
+                                        <exclude>org.jboss.as:jboss-as-connector</exclude>
+                                        <exclude>org.jboss.as:jboss-as-controller</exclude>
+                                        <exclude>org.jboss.as:jboss-as-deployment-repository</exclude>
+                                        <exclude>org.jboss.as:jboss-as-deployment-scanner</exclude>
+                                        <exclude>org.jboss.as:jboss-as-domain-http-interface</exclude>
+                                        <exclude>org.jboss.as:jboss-as-domain-management</exclude>
+                                        <exclude>org.jboss.as:jboss-as-ee</exclude>
+                                        <exclude>org.jboss.as:jboss-as-ee-deployment</exclude>
+                                        <exclude>org.jboss.as:jboss-as-ejb3</exclude>
+                                        <exclude>org.jboss.as:jboss-as-embedded</exclude>
+                                        <exclude>org.jboss.as:jboss-as-host-controller</exclude>
+                                        <exclude>org.jboss.as:jboss-as-jacorb</exclude>
+                                        <exclude>org.jboss.as:jboss-as-jaxr</exclude>
+                                        <exclude>org.jboss.as:jboss-as-jaxrs</exclude>
+                                        <exclude>org.jboss.as:jboss-as-jdr</exclude>
+                                        <exclude>org.jboss.as:jboss-as-jmx</exclude>
+                                        <exclude>org.jboss.as:jboss-as-jpa</exclude>
+                                        <exclude>org.jboss.as:jboss-as-jpa-hibernate3</exclude>
+                                        <exclude>org.jboss.as:jboss-as-jpa-hibernate4</exclude>
+                                        <exclude>org.jboss.as:jboss-as-jpa-spi</exclude>
+                                        <exclude>org.jboss.as:jboss-as-jpa-util</exclude>
+                                        <exclude>org.jboss.as:jboss-as-jsf</exclude>
+                                        <exclude>org.jboss.as:jboss-as-jsr77</exclude>
+                                        <exclude>org.jboss.as:jboss-as-logging</exclude>
+                                        <exclude>org.jboss.as:jboss-as-mail</exclude>
+                                        <exclude>org.jboss.as:jboss-as-management-client-content</exclude>
+                                        <exclude>org.jboss.as:jboss-as-messaging</exclude>
+                                        <exclude>org.jboss.as:jboss-as-modcluster</exclude>
+                                        <exclude>org.jboss.as:jboss-as-naming</exclude>
+                                        <exclude>org.jboss.as:jboss-as-network</exclude>
+                                        <exclude>org.jboss.as:jboss-as-osgi-service</exclude>
+                                        <exclude>org.jboss.as:jboss-as-platform-mbean</exclude>
+                                        <exclude>org.jboss.as:jboss-as-pojo</exclude>
+                                        <exclude>org.jboss.as:jboss-as-process-controller</exclude>
+                                        <exclude>org.jboss.as:jboss-as-protocol</exclude>
+                                        <exclude>org.jboss.as:jboss-as-remoting</exclude>
+                                        <exclude>org.jboss.as:jboss-as-sar</exclude>
+                                        <exclude>org.jboss.as:jboss-as-security</exclude>
+                                        <exclude>org.jboss.as:jboss-as-server</exclude>
+                                        <exclude>org.jboss.as:jboss-as-sos</exclude>
+                                        <exclude>org.jboss.as:jboss-as-threads</exclude>
+                                        <exclude>org.jboss.as:jboss-as-transactions</exclude>
+                                        <exclude>org.jboss.as:jboss-as-web</exclude>
+                                        <exclude>org.jboss.as:jboss-as-webservices-server-integration</exclude>
+                                        <exclude>org.jboss.as:jboss-as-weld</exclude>
+                                        <exclude>org.jboss.as:jboss-as-xts</exclude>
+                                        <exclude>org.jboss.classfilewriter:jboss-classfilewriter</exclude>
+                                        <exclude>org.jboss.common:jboss-common-beans</exclude>
+                                        <exclude>org.jboss.com.sun.httpserver:httpserver</exclude>
+                                        <exclude>org.jboss.ejb3:jboss-ejb3-ext-api</exclude>
+                                        <exclude>org.jboss.invocation:jboss-invocation</exclude>
+                                        <exclude>org.jboss.ironjacamar:ironjacamar-common-api</exclude>
+                                        <exclude>org.jboss.ironjacamar:ironjacamar-common-impl</exclude>
+                                        <exclude>org.jboss.ironjacamar:ironjacamar-common-spi</exclude>
+                                        <exclude>org.jboss.ironjacamar:ironjacamar-core-api</exclude>
+                                        <exclude>org.jboss.ironjacamar:ironjacamar-core-impl</exclude>
+                                        <exclude>org.jboss.ironjacamar:ironjacamar-deployers-common</exclude>
+                                        <exclude>org.jboss.ironjacamar:ironjacamar-jdbc</exclude>
+                                        <exclude>org.jboss.ironjacamar:ironjacamar-validator</exclude>
+                                        <exclude>org.jboss:jandex</exclude>
+                                        <exclude>org.jboss:jboss-common-core</exclude>
+                                        <exclude>org.jboss:jboss-iiop-client</exclude>
+                                        <exclude>org.jboss:jboss-transaction-spi</exclude>
+                                        <exclude>org.jboss.jbossts:jbossjts</exclude>
+                                        <exclude>org.jboss.jbossts:jbossjts-integration</exclude>
+                                        <exclude>org.jboss:jboss-vfs</exclude>
+                                        <exclude>org.jboss:jbossxb</exclude>
+                                        <exclude>org.jboss.marshalling:jboss-marshalling-river</exclude>
+                                        <exclude>org.jboss.metadata:jboss-metadata-appclient</exclude>
+                                        <exclude>org.jboss.metadata:jboss-metadata-common</exclude>
+                                        <exclude>org.jboss.metadata:jboss-metadata-ear</exclude>
+                                        <exclude>org.jboss.metadata:jboss-metadata-ejb</exclude>
+                                        <exclude>org.jboss.metadata:jboss-metadata-web</exclude>
+                                        <exclude>org.jboss.mod_cluster:mod_cluster-container-catalina</exclude>
+                                        <exclude>org.jboss.mod_cluster:mod_cluster-container-jbossweb</exclude>
+                                        <exclude>org.jboss.mod_cluster:mod_cluster-container-spi</exclude>
+                                        <exclude>org.jboss.mod_cluster:mod_cluster-core</exclude>
+                                        <exclude>org.jboss.osgi.framework:jbosgi-framework-core</exclude>
+                                        <exclude>org.jboss.osgi.metadata:jbosgi-metadata</exclude>
+                                        <exclude>org.jboss.osgi.repository:jbosgi-repository-api</exclude>
+                                        <exclude>org.jboss.osgi.repository:jbosgi-repository-core</exclude>
+                                        <exclude>org.jboss.osgi.resolver:jbosgi-resolver-api</exclude>
+                                        <exclude>org.jboss.osgi.resolver:jbosgi-resolver-felix</exclude>
+                                        <exclude>org.jboss.osgi.spi:jbosgi-spi</exclude>
+                                        <exclude>org.jboss.osgi.vfs:jbosgi-vfs</exclude>
+                                        <exclude>org.jboss.osgi.vfs:jbosgi-vfs30</exclude>
+                                        <exclude>org.jboss.resteasy:resteasy-cdi</exclude>
+                                        <exclude>org.jboss.resteasy:resteasy-yaml-provider</exclude>
+                                        <exclude>org.jboss.security:jboss-negotiation-common</exclude>
+                                        <exclude>org.jboss.security:jboss-negotiation-extras</exclude>
+                                        <exclude>org.jboss.security:jboss-negotiation-net</exclude>
+                                        <exclude>org.jboss.security:jboss-negotiation-ntlm</exclude>
+                                        <exclude>org.jboss.security:jboss-negotiation-spnego</exclude>
+                                        <exclude>org.jboss.security:jbossxacml</exclude>
+                                        <exclude>org.jboss.shrinkwrap:shrinkwrap-api</exclude>
+                                        <exclude>org.jboss.shrinkwrap:shrinkwrap-impl-base</exclude>
+                                        <exclude>org.jboss.shrinkwrap:shrinkwrap-spi</exclude>
+                                        <exclude>org.jboss.slf4j:slf4j-jboss-logmanager</exclude>
+                                        <exclude>org.jboss:staxmapper</exclude>
+                                        <exclude>org.jboss.stdio:jboss-stdio</exclude>
+                                        <exclude>org.jboss.threads:jboss-threads</exclude>
+                                        <exclude>org.jboss.web:jasper-jdt</exclude>
+                                        <exclude>org.jboss.web:jbossweb</exclude>
                                         <exclude>org.jboss.weld:weld-core</exclude>
+                                        <exclude>org.jboss.weld:weld-spi</exclude>
+                                        <exclude>org.jboss.ws.cxf:jbossws-cxf-client</exclude>
+                                        <exclude>org.jboss.ws.cxf:jbossws-cxf-factories</exclude>
+                                        <exclude>org.jboss.ws.cxf:jbossws-cxf-server</exclude>
+                                        <exclude>org.jboss.ws.cxf:jbossws-cxf-transports-httpserver</exclude>
+                                        <exclude>org.jboss.ws:jbossws-common</exclude>
+                                        <exclude>org.jboss.ws:jbossws-common-tools</exclude>
+                                        <exclude>org.jboss.ws:jbossws-spi</exclude>
+                                        <exclude>org.jboss.ws.native:jbossws-native-services</exclude>
+                                        <exclude>org.jboss.ws.projects:jaxws-jboss-httpserver-httpspi</exclude>
+                                        <exclude>org.jboss.xnio:xnio-nio</exclude>
+                                        <exclude>org.jdom:jdom</exclude>
+                                        <exclude>org.jgroups:jgroups</exclude>
+                                        <exclude>org.kohsuke.rngom:rngom</exclude>
+                                        <exclude>org.python:jython-standalone</exclude>
+                                        <exclude>org.scannotation:scannotation</exclude>
+                                        <exclude>org.yaml:snakeyaml</exclude>
+                                        <exclude>xml-resolver:xml-resolver</exclude>
+                                        <exclude>xom:xom</exclude>
+                                        <!-- Blacklisted artifacts - see build/javadoc/artifactsBlacklist.txt. -->
+                                        <!-- [ERROR] java.lang.ClassCastException: com.sun.tools.javadoc.ClassDocImpl cannot be cast to com.sun.javadoc.AnnotationTypeDoc -->
+                                        <exclude>org.jboss.as:jboss-as-controller-client</exclude>
+                                        <exclude>org.jboss:jboss-dmr</exclude>
+                                        <exclude>org.jboss.jbossts:jbossxts</exclude>
+                                        <exclude>org.jboss.jbossts:jbossxts-api</exclude>
+                                        <exclude>org.jboss.weld:weld-core</exclude>
+                                        <exclude>org.picketbox:picketbox-commons</exclude>
+                                        <exclude>xalan:serializer</exclude>
                                     </dependencySourceExcludes>
 
                                     <groups>

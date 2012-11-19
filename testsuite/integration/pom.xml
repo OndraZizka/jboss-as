@@ -216,10 +216,10 @@
             </plugin>
 
 
-            <!-- General surefire configuration. Applies to submodules too. -->
+            <!-- General failsafe configuration. Applies to submodules too. -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
+                <artifactId>maven-failsafe-plugin</artifactId>
                 <configuration>
                     <skipTests>${ts.skipTests}</skipTests>
                     <!-- Prevent test and server output appearing in console. -->
@@ -265,8 +265,8 @@
                 </executions>
                 <configuration>
                     <includes>
-                        <include>target/surefire-reports/**/*-output.txt</include>
-                        <include>target/surefire-reports/**/*.txt</include>
+                        <include>target/failsafe-reports/**/*-output.txt</include>
+                        <include>target/failsafe-reports/**/*.txt</include>
                     </includes>
                     <replacements>
                         <!-- Fix one-letter-per-line. -->

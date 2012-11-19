@@ -56,20 +56,18 @@
             <build>
                 <plugins>
 
-                    <!-- Surefire. -->
+                    <!-- Failsafe. -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
                         <executions combine.children="append">
 
-                            <!-- Disable default-test execution. -->
-                            <execution><id>default-test</id><goals><goal>test</goal></goals><phase>none</phase></execution>
 
                             <!-- Smoke tests - FULL. -->
                             <execution>
                                 <id>smoke-full.surefire</id>
-                                <phase>test</phase>
-                                <goals><goal>test</goal></goals>
+                                <phase>integration-test</phase>
+                                <goals><goal>integration-test</goal></goals>
                                 <configuration>
                                     <includes>
                                         <include>org/jboss/as/test/smoke/jms/**/*Test*.java</include>
@@ -87,9 +85,12 @@
                             <!-- Smoke tests - WEB. -->
                             <execution>
                                 <id>smoke-web.surefire</id>
-                                <phase>test</phase>
-                                <goals><goal>test</goal></goals>
+                                <phase>integration-test</phase>
+                                <goals><goal>integration-test</goal></goals>
                                 <configuration>
+                                    <includes>
+                                        <include>org/jboss/as/test/smoke/**/*Test*.java</include>
+                                    </includes>
                                     <excludes>
                                         <exclude>org/jboss/as/test/smoke/jms/**/*</exclude>
                                         <exclude>org/jboss/as/test/smoke/messaging/**/*</exclude>
@@ -118,19 +119,19 @@
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
                         <executions>
                             <!-- Disable execution with WEB config. -->
                             <execution>
                                 <id>smoke-web.surefire</id>
                                 <phase>none</phase>
-                                <goals><goal>test</goal></goals>
+                                <goals><goal>integration-test</goal></goals>
                             </execution>
                             <!-- Run the ALL tests with FULL config. -->
                             <execution>
                                 <id>smoke-full.surefire</id>
-                                <phase>test</phase>
-                                <goals><goal>test</goal></goals>
+                                <phase>integration-test</phase>
+                                <goals><goal>integration-test</goal></goals>
                                 <configuration>
                                     <systemPropertyVariables>
                                         <jboss.server.config.file.name>standalone-full.xml</jboss.server.config.file.name>
@@ -151,7 +152,7 @@
 
 
 
-        <!-- When -Dtest=... is set, only the default surefire execution with standalone-full.xml will run. -->
+        <!-- When -Dtest=... is set, only the default failsafe execution with standalone-full.xml will run. -->
         <profile>
             <id>onlyOneSurefireExecution.smoke.profile</id>
             <activation><property><name>test</name></property></activation>
@@ -159,9 +160,9 @@
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
                         <executions>
-                            <execution><id>smoke-full.surefire</id><phase>test</phase></execution>
+                            <execution><id>smoke-full.surefire</id><phase>integration-test</phase></execution>
                             <execution><id>smoke-web.surefire</id><phase>none</phase></execution>
                         </executions>
                     </plugin>

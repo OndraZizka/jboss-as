@@ -155,6 +155,8 @@
         <!-- used to enable trace logging for test suite runs -->
         <trace>none</trace>
 
+        <it.test>${test}</it.test>
+	
     </properties>
 
     <dependencyManagement>
@@ -418,13 +420,34 @@
                 </executions>
             </plugin>
 
+            <!-- Disable surefire. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default-test</id>
+                        <goals><goal>test</goal></goals>
+                        <phase>none</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
             <!--
-                Sets general surefire system properties.
+                Sets general failsafe system properties.
                 These can be overridden by inheriting plugin configurations.
              -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <executions>
+                    <execution>
+                            <goals>
+                                <goal>integration-test</goal>
+                                <goal>verify</goal>
+                            </goals>
+                    </execution>
+                </executions>
                 <configuration>
                     <failIfNoTests>false</failIfNoTests>
                     <redirectTestOutputToFile>${testLogToFile}</redirectTestOutputToFile>

@@ -72,25 +72,17 @@
                     </plugin>
 
                     <!--
-                       Surefire test executions.
+                       Failsafe test executions.
                     -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
                         <executions combine.children="append">
-
-                            <!-- Disable default-test execution. -->
-                            <execution>
-                                <id>default-test</id> 
-                                <goals><goal>test</goal></goals>
-                                <phase>none</phase>
-                            </execution>
-
                             <!-- TCP clustering tests with manual containers with unmanaged deployment. -->
                             <execution>
                                 <id>ts.surefire.clust.multinode-manual-tcp-sync</id>
-                                <phase>test</phase> 
-                                <goals><goal>test</goal></goals>
+                                <phase>integration-test</phase> 
+                                <goals><goal>integration-test</goal></goals>
                                 <configuration>
                                     <!-- Tests to execute. -->
                                     <includes>
@@ -113,7 +105,7 @@
 
                             <!-- Single node clustering tests. TODO: move from clustering TS. -->
                             <execution>
-                                <id>ts.surefire.clust.single-node</id> <phase>test</phase> <goals><goal>test</goal></goals>
+                                <id>ts.surefire.clust.single-node</id> <phase>integration-test</phase> <goals><goal>integration-test</goal></goals>
                                 <configuration>
                                     <!-- Tests to execute. -->
                                     <includes>
@@ -171,25 +163,17 @@
                     </plugin>
 
                     <!--
-                       Surefire test executions.
+                       Failsafe test executions.
                     -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
                         <executions combine.children="append">
-
-                            <!-- Disable default-test execution. -->
-                            <execution>
-                                <id>default-test</id>
-                                <goals><goal>test</goal></goals>
-                                <phase>none</phase>
-                            </execution>
-
                             <!-- TCP-ASYNC -->
                             <execution>
                                 <id>ts.surefire.clust.multinode-manual-tcp-async</id>
-                                <phase>test</phase>
-                                <goals><goal>test</goal></goals>
+                                <phase>integration-test</phase>
+                                <goals><goal>integration-test</goal></goals>
                                 <configuration>
                                     <includes>
                                         <include>org/jboss/as/test/clustering/cluster/**/*TestCase.java</include>
@@ -207,8 +191,8 @@
                             <!-- UDP-SYNC -->
                             <execution>
                                 <id>ts.surefire.clust.multinode-manual-udp-sync</id>
-                                <phase>test</phase>
-                                <goals><goal>test</goal></goals>
+                                <phase>integration-test</phase>
+                                <goals><goal>integration-test</goal></goals>
                                 <configuration>
                                     <includes>
                                         <include>org/jboss/as/test/clustering/cluster/**/*TestCase.java</include>
@@ -226,8 +210,8 @@
                             <!-- UDP-ASYNC -->
                             <execution>
                                 <id>ts.surefire.clust.multinode-manual-udp-async</id>
-                                <phase>test</phase>
-                                <goals><goal>test</goal></goals>
+                                <phase>integration-test</phase>
+                                <goals><goal>integration-test</goal></goals>
                                 <configuration>
                                     <includes>
                                         <include>org/jboss/as/test/clustering/cluster/**/*TestCase.java</include>
@@ -247,8 +231,8 @@
                             <!-- Tests which are placed in clust module but they're not run by default -->
                             <execution>
                                 <id>ts.surefire.clust.multinode-manual-udp-extended</id>
-                                <phase>test</phase> 
-                                <goals><goal>test</goal></goals>
+                                <phase>integration-test</phase> 
+                                <goals><goal>integration-test</goal></goals>
                                 <configuration>
                                     <!-- Tests to execute. -->
                                     <includes>
@@ -293,7 +277,7 @@
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
                         <executions>
                             <execution>
                                 <id>ts.surefire.clust.jdbc-store</id>  
@@ -344,25 +328,17 @@
                     </plugin>
 
                     <!--
-                       Surefire test executions.
+                       Failsafe test executions.
                     -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
                         <executions combine.children="append">
-
-                            <!-- Disable default-test execution. -->
-                            <execution>
-                                <id>default-test</id>
-                                <goals><goal>test</goal></goals>
-                                <phase>none</phase>
-                            </execution>
-
                             <!-- Single node clustering tests. -->
                             <execution>
                                 <id>ts.surefire.clust.jdbc-store</id> 
-                                <phase>test</phase> 
-                                <goals><goal>test</goal></goals>
+                                <phase>integration-test</phase> 
+                                <goals><goal>integration-test</goal></goals>
                                 <configuration>
                                     <!-- Tests to execute. -->
                                     <includes>

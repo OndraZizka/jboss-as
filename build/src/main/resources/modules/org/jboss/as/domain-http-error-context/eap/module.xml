@@ -22,12 +22,10 @@
   ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.
   -->
 
-<module xmlns="urn:jboss:module:1.1" name="org.jboss.as.domain-http-error-context">
-    <properties>
-        <property name="jboss.api" value="private"/>
-    </properties>
+<module xmlns="urn:jboss:module:1.1" name="org.jboss.as.domain-http-error-context" slot="eap">
 
     <resources>
+        <resource-root path="dir"/>
         <!-- Insert resources here -->
     </resources>
 

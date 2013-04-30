@@ -28,6 +28,15 @@ public class DistributionContainerConfiguration extends CommonContainerConfigura
 
     private String jbossHome = System.getenv("JBOSS_HOME");
 
+    private String jbossDist = System.getenv("JBOSS_DIST");
+    
+    public enum IfExists {
+        SKIP, WARN_SKIP, WARN_OVERWRITE, OVERWRITE;
+        public static final IfExists fromString( String str ){
+            
+        }
+    }
+
     private String javaHome = System.getenv("JAVA_HOME");
 
     private String modulePath = System.getProperty("module.path");
@@ -47,7 +56,7 @@ public class DistributionContainerConfiguration extends CommonContainerConfigura
     }
 
     /**
-     * @return the jbossHome
+     *  Directory of JBoss AS / WildFly instance to use.
      */
     public String getJbossHome() {
         return jbossHome;
@@ -59,6 +68,17 @@ public class DistributionContainerConfiguration extends CommonContainerConfigura
      */
     public void setJbossHome(String jbossHome) {
         this.jbossHome = jbossHome;
+    }
+
+    /**
+     *  Directory with distribution of JBoss AS / WildFly to copy into jbossHome (if not null).
+     */
+    public String getJbossDist() {
+        return jbossDist;
+    }
+
+    public void setJbossDist( String jbossDist ) {
+        this.jbossDist = jbossDist;
     }
 
     /**
@@ -101,8 +121,11 @@ public class DistributionContainerConfiguration extends CommonContainerConfigura
     public void validate() throws ConfigurationException {
         super.validate();
         Validate.configurationDirectoryExists(jbossHome, "jbossHome '" + jbossHome + "' must exist");
+        if (jbossDist != null) {
+            Validate.configurationDirectoryExists(jbossDist, "Directory in jbossDist doesn't exist: " + jbossDist);
+        }
         if (javaHome != null) {
-            Validate.configurationDirectoryExists(javaHome, "javaHome must exist");
+            Validate.configurationDirectoryExists(javaHome, "Directory javaHome must exist: " + javaHome);
         }
     }
 

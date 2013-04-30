@@ -90,6 +90,11 @@ public final class ManagedDeployableContainer extends CommonDeployableContainer<
         }
 
         try {
+            final String jbossDist = config.getJbossDist();
+            if( jbossDist != null ){
+                copyJBossInstanceIfNotExists( new File(config.getJbossDist()), new File(config.getJbossHome()) );
+            }
+            
             final String jbossHome = config.getJbossHome();
             File jbossHomeDir = new File(jbossHome).getCanonicalFile();
             if (jbossHomeDir.isDirectory() == false)
